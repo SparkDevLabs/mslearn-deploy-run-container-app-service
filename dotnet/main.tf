@@ -8,7 +8,7 @@ provider "azurerm" {
 
 resource "azurerm_app_service_plan" "main" {
   name                = "docker-asp"
-  location            = "East US"
+  location            = "eastus"
   resource_group_name = "tf-example"
   kind                = "Linux"
   reserved            = true
@@ -20,7 +20,7 @@ resource "azurerm_app_service_plan" "main" {
 }
 resource "azurerm_app_service" "main" {
   name                = "docker-app-service"
-  location            = "East US"
+  location            = "eastus"
   resource_group_name = "tf-example"
   app_service_plan_id = "${azurerm_app_service_plan.main.id}"
 }
